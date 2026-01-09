@@ -462,7 +462,7 @@ export default function LabCalculator() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 p-6 bg-gray-50">
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-xl text-center">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-xl text-center flex flex-col justify-center min-h-[250px]">
               <h2 className="text-xl font-semibold mb-2">Чистая прибыль</h2>
               <div
                 className={`text-5xl font-bold ${
@@ -477,19 +477,19 @@ export default function LabCalculator() {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl border-2 border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+            <div className="bg-gradient-to-r from-gray-700 to-gray-800 p-6 rounded-xl min-h-[250px] flex flex-col justify-center">
+              <h3 className="text-lg font-semibold text-white mb-4 text-center">
                 График расходов и доходов
               </h3>
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-700">Инвестиции</span>
-                    <span className="font-semibold text-red-600">
+                    <span className="text-gray-300">Инвестиции</span>
+                    <span className="font-semibold text-red-400">
                       -{formatMoney(totalInvest)}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-gray-600 rounded-full h-3">
                     <div
                       className="bg-red-500 h-3 rounded-full transition-all duration-500"
                       style={{
@@ -507,12 +507,12 @@ export default function LabCalculator() {
 
                 <div>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-700">Операционные</span>
-                    <span className="font-semibold text-orange-600">
+                    <span className="text-gray-300">Операционные</span>
+                    <span className="font-semibold text-orange-400">
                       -{formatMoney(totalOperating)}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-gray-600 rounded-full h-3">
                     <div
                       className="bg-orange-500 h-3 rounded-full transition-all duration-500"
                       style={{
@@ -530,12 +530,12 @@ export default function LabCalculator() {
 
                 <div>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-700">Доход</span>
-                    <span className="font-semibold text-green-600">
+                    <span className="text-gray-300">Доход</span>
+                    <span className="font-semibold text-green-400">
                       +{formatMoney(revenue)}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-gray-600 rounded-full h-3">
                     <div
                       className="bg-green-500 h-3 rounded-full transition-all duration-500"
                       style={{
@@ -551,21 +551,21 @@ export default function LabCalculator() {
                   </div>
                 </div>
 
-                <div className="border-t-2 border-gray-300 pt-3 mt-3">
+                <div className="border-t border-gray-600 pt-3 mt-3">
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-800 font-bold">
+                    <span className="text-white font-bold">
                       Итоговая прибыль
                     </span>
                     <span
                       className={`font-bold ${
-                        profit >= 0 ? "text-green-600" : "text-red-600"
+                        profit >= 0 ? "text-green-400" : "text-red-400"
                       }`}
                     >
                       {profit >= 0 ? "+" : ""}
                       {formatMoney(profit)}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-4">
+                  <div className="w-full bg-gray-600 rounded-full h-4">
                     <div
                       className={`h-4 rounded-full transition-all duration-500 ${
                         profit >= 0
@@ -589,7 +589,6 @@ export default function LabCalculator() {
             </div>
           </div>
 
-          {/* Separator */}
           <div className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 py-6 px-8 shadow-lg">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-white mb-2">
